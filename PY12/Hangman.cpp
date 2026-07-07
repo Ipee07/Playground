@@ -12,7 +12,7 @@ void Hangman::guess(char letter) {
     bool found = false;
     for (size_t i = 0; i < word_.size(); i++) {
         if (tolower(letter) == tolower(word_[i])) {
-            guessed_word_[i] = letter;
+            guessed_word_[i] = word_[i];
             found = true;
         }
     }
@@ -32,8 +32,15 @@ bool Hangman::won() const {
 }
 
 void Hangman::draw() const {
-    vector<string> res;
-    res = {" +---+ ", " |   | ", " |     ", " |     ", " |     ", " |     ", "========"};
+    vector<string> res = {
+        " +---+  ",
+        " |   |  ",
+        " |      ", 
+        " |      ", 
+        " |      ", 
+        " |      ",
+        "========"
+    };
     if (errors_ >= 1) {
         res[2][5] = 'O';
     }
