@@ -36,24 +36,12 @@ void Hangman::draw() const {
         " |      ",
         "========"
     };
-    if (errors_ >= 1) {
-        res[2][5] = 'O';
-    }
-    if (errors_ >= 2) {
-        res[3][5] = '|';
-    }
-    if (errors_ >= 3) {
-        res[3][4] = '/';
-    }
-    if (errors_ >= 4) {
-        res[3][6] = '\\';
-    }
-    if (errors_ >= 5) {
-        res[4][4] = '/';
-    }
-    if (errors_ >= 6) {
-        res[4][6] = '\\';
-    }
+    if (errors_ >= 1) res[2][5] = 'O';
+    if (errors_ >= 2) res[3][5] = '|';
+    if (errors_ >= 3) res[3][4] = '/';
+    if (errors_ >= 4) res[3][6] = '\\';
+    if (errors_ >= 5) res[4][4] = '/';
+    if (errors_ >= 6) res[4][6] = '\\';
     
     for (string& s : res) {
         cout << s << "\n";
