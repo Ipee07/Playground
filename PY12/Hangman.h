@@ -17,5 +17,4 @@ class Hangman {
         string word_;
         string guessed_word_;
         int errors_;
-        vector<string> forca_; 
 };

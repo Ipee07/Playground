@@ -6,7 +6,6 @@ Hangman::Hangman(string word) : word_(word) {
         guessed_word_.append("?");
     }
     errors_ = 0;
-    forca_ = {" +---+ ", " |   | ", " |     ", " |     ", " |     ", " |     ", "======="};
 }
 
 void Hangman::guess(char letter) {
@@ -34,7 +33,7 @@ bool Hangman::won() const {
 
 void Hangman::draw() const {
     vector<string> res;
-    res = {" +---+ ", " |   | ", " |     ", " |     ", " |     ", " |     ", "======="};
+    res = {" +---+ ", " |   | ", " |     ", " |     ", " |     ", " |     ", "========"};
     if (errors_ >= 1) {
         res[2][5] = 'O';
     }
