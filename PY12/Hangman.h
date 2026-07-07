@@ -6,7 +6,7 @@ using namespace std;
 
 class Hangman {
     public:
-        Hangman(string word);
+        Hangman(const string& word);
         void guess(char letter);
         bool over() const;
         bool won() const;

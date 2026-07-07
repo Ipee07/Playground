@@ -1,12 +1,7 @@
 #include "Hangman.h"
 
-Hangman::Hangman(string word) : word_(word) {
-    size_t len = word.size();
-    for (size_t i = 0; i < len; i++) {
-        guessed_word_.append("?");
-    }
-    errors_ = 0;
-}
+Hangman::Hangman(const string& word) 
+    : word_(word), guessed_word_(word.size(), '?'), errors_(0) {}
 
 void Hangman::guess(char letter) {
     bool found = false;
@@ -60,7 +55,7 @@ void Hangman::draw() const {
         res[4][6] = '\\';
     }
     
-    for (string s : res) {
+    for (string& s : res) {
         cout << s << "\n";
     }
 
